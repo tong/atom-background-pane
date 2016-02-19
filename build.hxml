@@ -1,0 +1,6 @@
+BackgroundPane
+-js lib/background-pane.js
+-lib hxatom
+-cp src
+-cp ../../lib/om.core/src
+-debug
