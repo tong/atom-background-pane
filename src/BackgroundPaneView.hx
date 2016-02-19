@@ -23,6 +23,13 @@ class BackgroundPaneView {
         disposables.add( workspace.onDidAddPane( updateVisibility ) );
         disposables.add( workspace.onDidDestroyPane( updateVisibility ) );
         disposables.add( workspace.onDidChangeActivePaneItem( updateVisibility ) );
+
+        haxe.Timer.delay( function() {
+            if( shouldBeAttached() ) {
+                attach();
+                updateContent();
+            }
+        }, 1000 );
     }
 
     public function destroy() {
@@ -43,17 +50,23 @@ class BackgroundPaneView {
         }
     }
 
+
     function updateVisibility(_) {
         if( provider == null ) {
             detach();
             return;
         }
         var shouldAttach = shouldBeAttached();
-        if( attached )
+        if( attached ) {
             if( !shouldAttach ) detach();
-        else
+        } else {
             if( shouldAttach ) attach();
-        if( attached ) element.innerHTML = provider.get();
+        }
+        if( attached ) updateContent();
+    }
+
+    inline function updateContent() {
+        if( provider != null ) element.innerHTML = provider.get();
     }
 
     static function shouldBeAttached() : Bool {
