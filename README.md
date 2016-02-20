@@ -4,6 +4,7 @@
 Allows other packages to set the background content when there are no open editors.
 
 To change content a package must provide:
+
 1.  A `atom.background-pane` service .
 ```coffee
 "providedServices": {

@@ -3,4 +3,4 @@ BackgroundPane
 -lib hxatom
 -cp src
 -cp ../../lib/om.core/src
--debug
+#-debug

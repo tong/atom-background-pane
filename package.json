@@ -1,19 +1,18 @@
 {
-  "name": "background-pane",
-  "main": "./lib/background-pane",
-  "version": "0.1.0",
-  "description": "Show custom content on empty panes",
-  "keywords": [],
-  "consumedServices": {
-      "atom.background-pane": {
-          "versions": { "1.0.0": "consumeContentProvider" }
-      }
-  },
-  "repository": "https://github.com/atom/atom-background-pane",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.5.0 <2.0.0"
-  },
-  "dependencies": {
-  }
+    "name": "background-pane",
+    "main": "./lib/background-pane",
+    "version": "0.2.0",
+    "description": "Show custom content on empty panes",
+    "keywords": ["background","pane","empty"],
+    "consumedServices": {
+        "atom.background-pane": {
+            "versions": { "1.0.0": "consumeContentProvider" }
+        }
+    },
+    "repository": "https://github.com/atom/atom-background-pane",
+    "license": "GPL",
+    "engines": {
+        "atom": ">=1.5.0 <2.0.0"
+    },
+    "dependencies": {}
 }
