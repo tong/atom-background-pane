@@ -1,9 +1,10 @@
 
 typedef ContentProvider = {
-    get : Void->String
+    get : Void->Dynamic
 }
 
 @:keep
+@:expose
 class BackgroundPane {
 
     static inline function __init__() untyped module.exports = BackgroundPane;
@@ -12,7 +13,7 @@ class BackgroundPane {
     static var provider : ContentProvider;
 
     static function activate( savedState ) {
-        //trace( 'Atom-background-pane' );
+        trace( 'Atom-background-pane' );
         view = new BackgroundPaneView();
     }
 

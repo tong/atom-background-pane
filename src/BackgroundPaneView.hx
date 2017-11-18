@@ -1,8 +1,8 @@
 
+import BackgroundPane;
+import Atom.workspace;
 import js.Browser.document;
 import js.html.DivElement;
-import Atom.workspace;
-import BackgroundPane;
 
 class BackgroundPaneView {
 
@@ -50,7 +50,6 @@ class BackgroundPaneView {
         }
     }
 
-
     function updateVisibility(_) {
         if( provider == null ) {
             detach();
@@ -66,10 +65,16 @@ class BackgroundPaneView {
     }
 
     inline function updateContent() {
-        if( provider != null ) element.innerHTML = provider.get();
+        if( provider != null ) {
+            var e = provider.get();
+            if( e != null ) {
+                element.appendChild( provider.get() );
+            }
+        }
     }
 
-    static function shouldBeAttached() : Bool {
-        return workspace.getPanes().length == 1 && workspace.getActivePaneItem() == null;
+    inline function shouldBeAttached() : Bool {
+        return workspace.getActivePaneItem() == null;
+        //return workspace.getPanes().length == 1 && workspace.getActivePaneItem() == null;
     }
 }
