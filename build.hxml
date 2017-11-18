@@ -1,6 +1,5 @@
 BackgroundPane
 -js lib/background-pane.js
--lib hxatom
+-lib atom
 -cp src
--cp ../../lib/om.core/src
 #-debug

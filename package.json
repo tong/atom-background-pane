@@ -9,7 +9,7 @@
             "versions": { "1.0.0": "consumeContentProvider" }
         }
     },
-    "repository": "https://github.com/atom/atom-background-pane",
+    "repository": "https://github.com/tong/atom-background-pane",
     "license": "GPL",
     "engines": {
         "atom": ">=1.5.0 <2.0.0"
