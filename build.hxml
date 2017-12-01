@@ -2,7 +2,8 @@
 BackgroundPane
 -lib atom
 -cp src
--debug
 -dce full
+-debug
+#--no-traces
 #-lib closure
 #-D closure_overwrite

@@ -1,6 +1,6 @@
 
 typedef ContentProvider = {
-    get : Void->Dynamic
+    get : Void->String
 }
 
 @:keep
@@ -13,7 +13,6 @@ class BackgroundPane {
     static var provider : ContentProvider;
 
     static function activate( savedState ) {
-        trace( 'Atom-background-pane' );
         view = new BackgroundPaneView();
     }
 
