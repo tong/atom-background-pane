@@ -1,5 +1,8 @@
-BackgroundPane
 -js lib/background-pane.js
+BackgroundPane
 -lib atom
 -cp src
-#-debug
+-debug
+-dce full
+#-lib closure
+#-D closure_overwrite
