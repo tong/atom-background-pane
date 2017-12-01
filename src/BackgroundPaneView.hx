@@ -45,13 +45,14 @@ class BackgroundPaneView {
 
     function detach() {
         if( attached ) {
-            element.remove();
+            element.innerHTML = '';
             attached = false;
         }
     }
 
     function updateVisibility(_) {
-        if( provider == null ) {
+        var activePaneItem = workspace.getActivePane();
+        if( provider == null || activePaneItem == null ) {
             detach();
             return;
         }
@@ -66,9 +67,17 @@ class BackgroundPaneView {
 
     inline function updateContent() {
         if( provider != null ) {
+            /*
             var e = provider.get();
             if( e != null ) {
                 element.appendChild( provider.get() );
+            }
+            */
+            var html = provider.get();
+            if( html != null ) {
+                element.innerHTML = html;
+            } else {
+                element.innerHTML = '';
             }
         }
     }
